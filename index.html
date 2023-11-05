@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="res/styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>
+        Block-Shop
+    </title>
+    <link rel="icon" href="Page-Icon.png" type="image/x-icon/png">
+</head>
+<body>
+    <!--header-->
+    <div class="d-block">
+
+        <div class="bg-dark d-block">
+    
+            <div class="container">
+                <div class="d-flex  p-4 justify-content-center d-block">
+                    <input type="text" class="form-control ">
+                    <button class="btn btn-primary mx-4">
+                        <i class="bi-bell-fill"></i>
+                    </button>
+                    <button class="btn btn-primary Reset-Products">
+                        <i class="bi-emoji-laughing"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                
+                    <img src="Page-Icon.png" class="Image-Header img-fluid" alt="">
+                    <p class=" fw-medium text-white m-2">BLOCK SHOP</p>
+                
+
+    
+                <button class="navbar-toggler " data-bs-toggle="collapse"
+                data-bs-target="#navbar"><span class="navbar-toggler-icon"></span></button>        <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav ms-auto">
+                        
+                        <li class="nav-item">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#add-product" class="nav-link fw-medium ms-5 text-white">Sell-Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#"data-bs-toggle="modal" data-bs-target="#Manufactured"class="nav-link  fw-medium ms-5 text-white">Manufacturer</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--Manufactured-->
+    <div class="modal fade " id="Manufactured">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <P>Manufactured Product details</P>
+                </div>
+                <div class="modal-body">
+                        <p>Please Enter All Fields</p>
+                        <div class="form-floating mt-4">
+                            <input type="text" id="Account-Name" class="Account-verify form-control" placeholder="Sell">
+                            <label for="Account-Name">Account-Name</label>
+                            
+                        </div>
+                        <div class="form-floating mt-4">
+                            <input type="text" id="Account-Password" class="Account-password-verify form-control" placeholder="Sell">
+                            <label for="Account-Password">Account-Password</label>
+                            
+                        </div>
+                        <div class="Account-validation"></div>
+
+                        <div class="my-4">
+                            <button class="btn btn-primary Account-valid-button">Verify</button>
+                            <button class="btn btn-primary Account-clear-button">clear</button>
+                        </div>
+                        
+                        <div class="form-floating mt-4">
+                            <input type="text" id="New-Prod-Name" class="New-Prod form-control" placeholder="Sell">
+                            <label for="New-Prod-Name">Product Name</label>
+                            
+                        </div>
+                        <div class="">
+                            <button class="btn btn-primary mt-4 Generate-Code" data-bs-toggle="modal"data-bs-target="#Code-Modal">Add</button>
+                            <p class="added-or-not"></p>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" >Submit</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!--Code-modal-->
+
+    <div class="modal fade" id="Code-Modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p>Code</p>
+                </div>
+                <div class="modal-body ">
+                    <div class="alerting alert-text"></div>
+                    <div class="Code-display fw-bolder  p-5"></div>
+                    
+                    
+
+                </div>
+                <div class="modal-footer d-flex flex-column">
+                    
+                    <button class="btn btn-primary Code-Error-Preventor"data-bs-dismiss="modal">Copied</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--add product -->
+    <div class="modal fade " id="add-product">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <P>Product details</P>
+                </div>
+                <div class="modal-body">
+                        <p>Please Enter All Fields</p>
+                        <div class="form-floating mt-4">
+                            <input type="text" id="Prod-Image" class="image-add form-control" placeholder="Sell">
+                            <label for="Prod-Image">Image-Link</label>
+                            
+                        </div>
+                        <div class="form-floating mt-4">
+                            <input type="text" id="Prod-Name" class="name-add form-control" placeholder="Sell">
+                            <label for="Prod-Name">Name</label>
+                            
+                        </div>
+                        <div class="form-floating mt-4">
+                            <input type="number" id="Prod-rate" class="rate-add form-control" placeholder="Sell">
+                            <label for="Prod-rate">Cost</label>
+                            
+                        </div>
+
+                        <div class="input-group form-floating mt-4">
+                            <input type="text" id="Ucode" class="seller-input-code form-control" placeholder="Code">
+                            <label for="Ucode">Code</label>
+                            
+                            <button class="btn btn-primary rounded-end-3 validation-button ">Validate</button>
+                        </div>
+                        <p class="sign-valid d-inline"></p>
+                        <p class="validation d-inline"></p>
+                        <div class="form-floating mt-4">
+                            <input type="text" id="seller" class="add-seller-name form-control" placeholder="Sell">
+                            <label for="seller">Seller name</label>
+                            
+                        </div>
+                        <div class="">
+                            <button class="btn btn-primary mt-4 add-product">Add</button>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary form-clear" >Submit</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--products-->
+    <div class="container Products-grid mt-4 ">
+    </div>
+
+
+
+    <!--scripts-->
+    <script type="module" src="res/scripts/productgird.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>
