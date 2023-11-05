@@ -21,15 +21,7 @@ function renderProducts(){
                 <div class="rate">
                     <h3>${items.rate}</h3>
                 </div>
-                <div class="select">
-
-                    <select class="form-select-sm prod-quantity">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                </div>
+                
                 <div class="buy">
 
                 <a href="fullview-page.html">
