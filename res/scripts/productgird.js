@@ -4,7 +4,7 @@ import {cart,addToCart} from"./cart.js";
 import {generateRandomAlphaNumericCode} from"./commonfun.js";
 
 
-alert(`This is a Prototype of my project it may not fullfy functional and completely static . Credentials for code generation is \n \nAccount Name :  'Vivo' \n Password: 'Asgard' \n \nIf anything you did wrong since the website is static it saves data locally so click the emoji button in header to completely reset page`);
+alert(`This is a Prototype it may not fullfy functional and completely static . Credentials for code generation is \n \nAccount Name :  'Vivo' \n Password: 'Asgard' \n \nIf anything you did wrong since the website is static it saves data locally so click the emoji button in header to completely reset page`);
 renderProducts();
 
 function renderProducts(){
