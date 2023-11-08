@@ -1,13 +1,17 @@
 
-import {products,addNewProducts,manufacturers} from"./arrays.js";
+import {products,purchaseInfo,addNewProducts,manufacturers,myPurchase} from"./arrays.js";
 import {cart,addToCart} from"./cart.js";
 import {generateRandomAlphaNumericCode} from"./commonfun.js";
 
 
-alert(`This is a Prototype it may not fullfy functional and completely static . Credentials for code generation is \n \nAccount Name :  'Vivo' \n Password: 'Asgard' \n \nIf anything you did wrong since the website is static it saves data locally so click the emoji button in header to completely reset page`);
+document.querySelector('.Readme').addEventListener('click',()=>{
+
+    alert(`This is a Prototype of my project it may not fullfy functional and completely static . Credentials for code generation is \n \nAccount Name :  'Vivo' \n Password: 'Asgard' \n \nIf anything you did wrong since the website is static it saves data locally so click the emoji button in header to completely reset page`);
+});
 renderProducts();
 
-function renderProducts(){
+
+export function renderProducts(){
 
     let html=''
             products.forEach((items)=>{
@@ -16,12 +20,20 @@ function renderProducts(){
                     <img   class="prod-img w-50" src="${items.image}" alt="">
                 </div>
                 <div class="name">
-                    <p>${items.name}<p>
+                    <p>${items.ProductName}<p>
                 </div>
                 <div class="rate">
                     <h3>${items.rate}</h3>
                 </div>
-                
+                <div class="select">
+
+                    <select class="form-select-sm prod-quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
                 <div class="buy">
 
                 <a href="fullview-page.html">
@@ -220,6 +232,29 @@ AccountClear.addEventListener('click',()=>{
     
 });
 
+
+const codeList=document.querySelector('.CodeList');
+
+let codeGenerate="";
+myPurchase.forEach((items)=>{
+    codeGenerate+=`<p class="purchased-codes">${items}</p>`
+})
+codeList.innerHTML=codeGenerate;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.querySelector('.Reset-Products').addEventListener('click',()=>{
     clearNew();
 })
@@ -227,5 +262,9 @@ document.querySelector('.Reset-Products').addEventListener('click',()=>{
 
 function clearNew(){
     localStorage.clear('localprod');
+    localStorage.clear('localinfo');
+    localStorage.clear('localpurchase');
     location.reload();
 }
+
+
