@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="res/styles/style.css">
-    <title>Document</title>
+    <title>Block-Shop</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -30,8 +30,70 @@
             </div>
         </nav>
         <!--View-->
-        <div class="full-view pt-5 d-md-flex justify-content-center align-items-center" style="height:100vh;">
-            
+        <div class="full-view pt-5 d-flex justify-content-center align-items-center" style="height:85vh;">
+
+        </div>
+        <!--buy-detail-->
+        <div class="modal" id="buyDetail">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+
+                    <div class="modal-header">Buyer Info</div>
+                    <div class="modal-body">
+                        <input type="text"class="form-control BuyerName">
+                        <button class="btn btn-primary Name-get mt-3">Done</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary FinalBuy" data-bs-toggle="modal" data-bs-target="#greeting">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Greetings for purchased-->
+        <div class="modal" id="greeting">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p class="fw-bolder">Greetings : !</p>
+                    </div>
+                    <div class="modal-body">
+                        <p class="fw-medium">Thanks for purchasing , Sucesfully Purchased</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--DetailModal-->
+        <div class="modal fade" id="Info-Modal">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        Info
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-md-flex flex-row">
+                            <div class="Info-Img d-inline">
+                            </div>
+
+                            <div class="px-5 pt-md-3">
+    
+                                <p class="Info fw-bold">Manufacturer</p>
+                                <p class="Info-Manufacturer fw-medium"></p>
+                                <p class="Info fw-bold">Product Model</p>
+                                <p class="Info-ProdName fw-medium"></p>
+                                <p class="Info fw-bold">Owner</p>
+                                <p class="Info-Owner fw-medium"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <!--scripts-->
