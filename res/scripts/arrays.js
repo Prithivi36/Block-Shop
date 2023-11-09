@@ -88,7 +88,7 @@ export const products =JSON.parse(localStorage.getItem('localprod'))||[
 
 
 
-export const manufacturers=[
+export const manufacturersAcc=[
     {
         accountProductName:'Vivo',
         password:'Asgard'
