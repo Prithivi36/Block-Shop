@@ -72,7 +72,7 @@
 
 }
 .validation-right{
-    color: green;
+    color: lightgreen;
 }
 .validation-wrong, .alert-text{
     color: red;
