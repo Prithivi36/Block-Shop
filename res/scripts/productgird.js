@@ -1,5 +1,5 @@
 
-import {products,purchaseInfo,addNewProducts,manufacturers,myPurchase} from"./arrays.js";
+import {products,purchaseInfo,addNewProducts,manufacturersAcc,myPurchase} from"./arrays.js";
 import {cart,addToCart} from"./cart.js";
 import {generateRandomAlphaNumericCode} from"./commonfun.js";
 
@@ -171,7 +171,7 @@ AccountValidator.addEventListener('click',()=>{
     let validAccountName=false;
     let validAccount=false;
 
-    manufacturers.forEach((accounts)=>{
+    manufacturersAcc.forEach((accounts)=>{
         if(aName===accounts.accountName){
             validAccountName=true;
             if(aPassword===accounts.password){
