@@ -1,12 +1,15 @@
 
-import {products,purchaseInfo,addNewProducts,manufacturersAcc,myPurchase} from"./arrays.js";
+import {products,addNewProducts,manufacturers,myPurchase} from"./arrays.js";
 import {cart,addToCart} from"./cart.js";
 import {generateRandomAlphaNumericCode} from"./commonfun.js";
 
 
+const currentUser=JSON.parse(localStorage.getItem('userLoginName'));
+
+
 document.querySelector('.Readme').addEventListener('click',()=>{
 
-    alert(`This is a Prototype of my project it may not fullfy functional and completely static . Credentials for code generation is \n \nAccount Name :  'Vivo' \n Password: 'Asgard' \n \nIf anything you did wrong since the website is static it saves data locally so click the emoji button in header to completely reset page`);
+    alert(`This is a Prototype of my project it may not fullfy functional and completely static . Credentials for code generation is \n \nAccount Name :  'Vivo' \n Password: 'Asgard' \n \nIf anything you did wrong since the website is static it saves data locally so click the ERASE button in header to completely reset page`);
 });
 renderProducts();
 
@@ -17,7 +20,7 @@ export function renderProducts(){
             products.forEach((items)=>{
                 html=html+`<div class="BORDER-clas bg-dark text-light rounded-4">
                 <div class="d-flex justify-content-center image bg-light m-3 rounded-4">
-                    <img   class="prod-img w-50" src="${items.image}" alt="">
+                    <img   class="prod-img img-fluid h-100" src="${items.image}" alt="">
                 </div>
                 <div class="name">
                     <p>${items.ProductName}<p>
@@ -25,18 +28,10 @@ export function renderProducts(){
                 <div class="rate">
                     <h3>${items.rate}</h3>
                 </div>
-                <div class="select">
+                
+                <div class="buy mt-2">
 
-                    <select class="form-select-sm prod-quantity">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                </div>
-                <div class="buy">
-
-                <a href="fullview-page.html">
+                <a class="d-inline-block" href="fullview-page.html">
                 
                 <button  data-code-id=${items.code} class="btn rounded-5 btn-primary Purchase-button  d-block my-2 home-page-button">
                     Buy Now
@@ -118,10 +113,10 @@ export function renderProducts(){
             const newSellerName=sellerNameAdd.value;
             products.push({
                 image:newImage,
-                name:newName,
+                ProductName:newName,
                 rate:newRate,
                 code:newCode,
-                sellerName:newSellerName,
+                owner:newSellerName,
             });addNewProducts();renderProducts();
             console.log(products)
         }
@@ -160,6 +155,7 @@ const codeSpace=document.querySelector('.Code-display');
 const codeErrorpreventor=document.querySelector('.Code-Error-Preventor');
 const alertMessage=document.querySelector('.alerting');
 
+
 let Accname=" ";
 let Accpass=" ";
 
@@ -171,7 +167,7 @@ AccountValidator.addEventListener('click',()=>{
     let validAccountName=false;
     let validAccount=false;
 
-    manufacturersAcc.forEach((accounts)=>{
+    manufacturers.forEach((accounts)=>{
         if(aName===accounts.accountName){
             validAccountName=true;
             if(aPassword===accounts.password){
@@ -200,7 +196,7 @@ AccountValidator.addEventListener('click',()=>{
         generateCode.addEventListener('click',()=>{
             codeSpace.innerHTML=generateRandomAlphaNumericCode(18);
             setTimeout(safetyAction,10000);
-            alertMessage.innerHTML=`<p>As this is a sensitive information right now The Page will Refresh in 20 seconds : &#41; copy soon</p>`;
+            alertMessage.innerHTML=`<p>As this is a sensitive information right now The Page will Refresh in 10 seconds : &#41; copy soon</p>`;
             
             
             
@@ -259,12 +255,11 @@ document.querySelector('.Reset-Products').addEventListener('click',()=>{
     clearNew();
 })
 
-
 function clearNew(){
     localStorage.clear('localprod');
     localStorage.clear('localinfo');
     localStorage.clear('localpurchase');
     location.reload();
-}
+    window.history.back();}
 
 
