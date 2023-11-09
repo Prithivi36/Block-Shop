@@ -90,19 +90,19 @@ export const products =JSON.parse(localStorage.getItem('localprod'))||[
 
 export const manufacturersAcc=[
     {
-        accountProductName:'Vivo',
+        accountName:'Vivo',
         password:'Asgard'
     },
     {
-        accountProductName:'Samsung',
+        accountName:'Samsung',
         password:'Odin'
     },
     {
-        accountProductName:'Apple',
+        accountName:'Apple',
         password:'Thor'
     },
     {
-        accountProductName:'Oppo',
+        accountName:'Oppo',
         password:'Loki'
     },
 ];
