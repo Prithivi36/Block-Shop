@@ -1,6 +1,8 @@
 import {products,purchaseInfo,productCodeInfo, addNewProducts,myPurchase,codeInfo} from"./arrays.js";
 import {cart} from"./cart.js";
 
+const currentUser=JSON.parse(localStorage.getItem('userLoginName'));
+console.log(currentUser);
 
 
 let view=" ";
@@ -58,9 +60,7 @@ const InfoImage=document.querySelector('.Info-Img');
 const InfoManufactured=document.querySelector('.Info-Manufacturer');
 const InfoProduct=document.querySelector('.Info-ProdName');
 const InfoOwner=document.querySelector('.Info-Owner');
-const BuyerName=document.querySelector('.BuyerName');
 
-let Buyer;
 
 
 
@@ -81,8 +81,7 @@ verification.addEventListener('click',()=>{
 FinalBuy.addEventListener('click',()=>{
     productCodeInfo.forEach((codesInfo)=>{
         if(cart===codesInfo.code){
-            Buyer=BuyerName.value;
-            codesInfo.owner=Buyer;
+            codesInfo.owner=currentUser;
             myPurchase.push(codesInfo.code);
             codeInfo();
             products.forEach((item,index)=>{
