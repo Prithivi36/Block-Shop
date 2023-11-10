@@ -2,15 +2,15 @@ import {products,purchaseInfo,productCodeInfo, addNewProducts,myPurchase,codeInf
 import {cart} from"./cart.js";
 
 const currentUser=JSON.parse(localStorage.getItem('userLoginName'));
-console.log(currentUser);
 
+//page generation
 
 let view=" ";
 let titleView=" ";
 
     products.forEach((viewCheck)=>{
         if(cart===viewCheck.code){
-            titleView+=`<p class='text-white fw-medium p-2'>${viewCheck.ProductName}</p>`
+            titleView+=`<p class='text-dark fw-medium p-2'>${viewCheck.ProductName}</p>`
             view+=`<div class="container">
             <div class="View-grid-head">
                 <div class="view-image">
@@ -19,31 +19,33 @@ let titleView=" ";
                 
                 <div class="prod-info d-flex flex-column justify-content-center ms-md-5">
                     <div class="name">
-                        <p class="fw-bold">${viewCheck.ProductName}</p>
+                        <h3 class="fw-bold text-white mb-4">${viewCheck.ProductName}</h3>
                     </div>
                     <div class="seller">
                         <p class="fw-bolder text-primary">${viewCheck.owner}</p>
                     </div>
                     <div class="code">
-                        <p style="display: inline-block;">${viewCheck.code}</p>
-                        <button class="btn btn-sm btn-primary verification" data-bs-toggle="modal" data-bs-target="#Info-Modal">Verify</button>
+                        <p class="fw-bolder text-primary" style="display: inline-block;">${viewCheck.code}</p>
+                        <button class="btn btn-sm btn-warning verification" data-bs-toggle="modal" data-bs-target="#Info-Modal">Verify</button>
                     </div>
                     <div class="rate">
-                        <h2 class="fw-bold">${viewCheck.rate}</h2>
+                        <h2 class="fw-bold text-white">${viewCheck.rate}</h2>
                     </div>
                     <div class="view-buy">
-                        <button class="btn btn-md-lg btn-primary " data-bs-toggle="modal" data-bs-target="#buyDetail">Buy Now</button>
+                        <button class="btn btn-md-lg btn-warning " data-bs-toggle="modal" data-bs-target="#buyDetail">Buy Now</button>
                     </div>
                   </div>
                 </div>
             <div class="m-5">
-                <p class="m-5">More Features will be available soon</p>
+                <p class="m-5 ">More Features will be available soon</p>
             </div>
         </div>`;
         }
 
     });
 
+
+//DOM Page Generation
 
 const viewEelement=document.querySelector('.full-view');
 viewEelement.innerHTML=view;
@@ -52,7 +54,7 @@ viewEelement.innerHTML=view;
 const TitleNav=document.querySelector('.Title-Nav');
 TitleNav.innerHTML=titleView;
 
-
+//DOM
 
 const verification=document.querySelector('.verification');
 const FinalBuy=document.querySelector('.FinalBuy');
@@ -63,7 +65,7 @@ const InfoOwner=document.querySelector('.Info-Owner');
 
 
 
-
+//check Info
 
 verification.addEventListener('click',()=>{
     productCodeInfo.forEach((codesInfo)=>{
@@ -76,7 +78,7 @@ verification.addEventListener('click',()=>{
     })
 });
 
-
+//Finally bought change of ownerShip
 
 FinalBuy.addEventListener('click',()=>{
     productCodeInfo.forEach((codesInfo)=>{
