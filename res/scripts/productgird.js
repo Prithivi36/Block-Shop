@@ -1,5 +1,5 @@
 
-import {products,addNewProducts,manufacturers,myPurchase} from"./arrays.js";
+import {products,addNewProducts,productCodeInfo,manufacturers,myPurchase, codeInfo} from"./arrays.js";
 import {cart,addToCart} from"./cart.js";
 import {generateRandomAlphaNumericCode} from"./commonfun.js";
 
@@ -103,7 +103,7 @@ export function renderProducts(){
 
     
     addProduct.addEventListener('click',()=>{
-        setTimeout(safetyAction,2000);
+        setTimeout(safetyAction,20000);
         console.log(validation.innerHTML);
         if(validation.innerHTML==='Unique'){
             const newImage=imageAdd.value;
@@ -117,7 +117,19 @@ export function renderProducts(){
                 rate:newRate,
                 code:newCode,
                 owner:newSellerName,
-            });addNewProducts();renderProducts();
+            });
+
+            productCodeInfo.forEach((information)=>{
+                if(information.code===newCode){
+                    
+                    information.owner=newSellerName;
+                    codeInfo();
+
+                }
+            })
+
+            
+            addNewProducts();renderProducts();
             console.log(products)
         }
     });
@@ -154,6 +166,8 @@ const generateCode=document.querySelector('.Generate-Code');
 const codeSpace=document.querySelector('.Code-display');
 const codeErrorpreventor=document.querySelector('.Code-Error-Preventor');
 const alertMessage=document.querySelector('.alerting');
+const NewProductImage=document.querySelector('.New-Product-Image');
+const NewProductName=document.querySelector('.New-Product-name');
 
 
 let Accname=" ";
@@ -194,7 +208,20 @@ AccountValidator.addEventListener('click',()=>{
         AccountName.value=Accname;
         AccountPassword.value=Accpass;
         generateCode.addEventListener('click',()=>{
-            codeSpace.innerHTML=generateRandomAlphaNumericCode(18);
+            const ImageNew=NewProductImage.value;
+            const NameNew=NewProductName.value;
+            const codeNew=generateRandomAlphaNumericCode(18);
+            productCodeInfo.push({
+                code:codeNew,
+                image:ImageNew,
+                ProductName:NameNew,
+                owner:'',
+                manufacturer:aName
+            });
+            
+            codeInfo();
+            console.log(productCodeInfo);
+            codeSpace.innerHTML=codeNew;
             setTimeout(safetyAction,10000);
             alertMessage.innerHTML=`<p>As this is a sensitive information right now The Page will Refresh in 10 seconds : &#41; copy soon</p>`;
             
@@ -263,3 +290,6 @@ function clearNew(){
     window.history.back();}
 
 
+
+
+    console.log(productCodeInfo);
