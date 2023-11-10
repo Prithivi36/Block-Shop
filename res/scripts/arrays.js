@@ -80,16 +80,15 @@ export const products =JSON.parse(localStorage.getItem('localprod'))||[
         owner:"Apple Cosmos"
     },
     ];
+
+
+
     export function addNewProducts(){
         localStorage.setItem('localprod',JSON.stringify(products));
     }
 
 
-
-
     //mfds
-
-
 
 
 export const manufacturers=[
