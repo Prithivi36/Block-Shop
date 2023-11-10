@@ -191,6 +191,7 @@ export const productCodeInfo=JSON.parse(localStorage.getItem('localinfo'))||[
         owner:"Apple Cosmos",
         manufacturer:'Redmi'
     },
+    
 ];
 
 
