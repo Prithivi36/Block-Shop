@@ -60,6 +60,9 @@
     display: grid;
     grid-template-columns: .4fr 1fr;
 }
+.buyNow{
+    text-decoration: none;
+}
 @media(max-width:360px){
     .View-grid-head{
         grid-template-columns: 40% 1fr;
