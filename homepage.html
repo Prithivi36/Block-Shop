@@ -11,202 +11,171 @@
     </title>
     <link rel="icon" href="Page-Icon.png" type="image/x-icon/png">
 </head>
-<body>
-    <!--header-->
-    <div class="d-block">
+<body class="bg-black ">
 
-        <div class="bg-dark d-block">
-    
-            <div class="container">
-                <div class="d-flex  p-4 justify-content-center d-block">
-                    <div class="input-group">
+<!--header-->
 
-                        <input placeholder="Search" type="text" class="form-control ">
-                        <button class="btn btn-primary me-2">
-                            <i class="bi-search-heart"></i>
-                        </button>
+<section class="bg-dark">
+    <div class="container bg-dark">
+        <div class="d-flex flex-nowrap p-4 justify-content-center d-block">
+            <div class="input-group flex-nowrap">
+                <input placeholder="Search" type="text" class="form-control ">
+                <button class="btn btn-warning me-2"><i class="bi-search-heart"></i></button>
+            </div>
+            <button class="btn btn-warning Reset-Products me-2"><i class="bi-eraser"></i></button>
+            <button class="btn btn-warning btn-sm Readme me-2">README</button>
+        </div>
+    </div>
+</section>
+
+<!--navbar-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+        <div class="container">
+                <img src="Page-Icon.png" class="Image-Header img-fluid" alt="">
+                <p class=" fw-bolder text-dark m-2">BLOCK SHOP</p>
+                <button class="navbar-toggler " data-bs-toggle="collapse" data-bs-target="#navbar"><span class="navbar-toggler-icon"></span></button>        <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#"data-bs-toggle="modal" data-bs-target="#Mycodes"class="nav-link  fw-medium ms-5 text-dark">My Purchases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#add-product" class="nav-link fw-medium ms-5 text-dark">Sell-Item</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"data-bs-toggle="modal" data-bs-target="#Manufactured"class="nav-link  fw-medium ms-5 text-dark">Manufacturer</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!--my purchase-->
+
+<div class="modal fade" id="Mycodes">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p>My Codes</p>
+            </div>
+            <div class="modal-body ">
+                <div class="CodeList"></div>
+                <p class="purchased-codes"></p>
+            </div>
+            <div class="modal-footer d-flex flex-column">
+                <button class="btn btn-warning "data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Manufactured-->
+
+<div class="modal fade " id="Manufactured">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <P>Manufactured Product details</P>
+            </div>
+            <div class="modal-body">
+                    <p>Please Enter All Fields</p>
+                    <div class="form-floating mt-4">
+                        <input type="text" id="Account-Name" class="Account-verify form-control" placeholder="Sell">
+                        <label for="Account-Name">Account-Name</label>
                     </div>
-                    <a class="auto-exit" href="index.html"></a>
-                    <button class="btn btn-primary Reset-Products me-2">
-                        <i class="bi-eraser"></i>
-                    </button>
-                    <button class="btn btn-primary Readme me-2">README</button>
-                </div>
-            </div>
-        </div>
-        <!--navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                
-                    <img src="Page-Icon.png" class="Image-Header img-fluid" alt="">
-                    <p class=" fw-medium text-white m-2">BLOCK SHOP</p>
-                
+                    <div class="form-floating mt-4">
+                        <input type="password" id="Account-Password" class="Account-password-verify form-control" placeholder="Sell">
+                        <label for="Account-Password">Account-Password</label>
+                    </div>
+                    <div class="my-4">
+                        <button class="btn btn-warning Account-valid-button">Verify</button>
+                        <button class="btn btn-warning Account-clear-button">clear</button>
+                    </div>
+                    <div class="form-floating mt-4">
+                        <input type="text" id="New-Product-Image" class="New-Product-Image form-control" placeholder="Sell">
+                        <label for="New-Product-Image">Enter Product Image</label>
+                    </div>
+                    <div class="form-floating mt-4">
+                        <input type="text" id="New-Product-name" class="New-Product-name form-control" placeholder="Sell">
+                        <label for="New-Product-name">Enter Product Name</label>
+                    </div>
+                    <div class="Account-validation"></div>
 
-    
-                <button class="navbar-toggler " data-bs-toggle="collapse"
-                data-bs-target="#navbar"><span class="navbar-toggler-icon"></span></button>        <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a href="#"data-bs-toggle="modal" data-bs-target="#"class="nav-link  fw-medium ms-5 text-white"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#"data-bs-toggle="modal" data-bs-target="#Mycodes"class="nav-link  fw-medium ms-5 text-white">My Purchases</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#add-product" class="nav-link fw-medium ms-5 text-white">Sell-Item</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#"data-bs-toggle="modal" data-bs-target="#Manufactured"class="nav-link  fw-medium ms-5 text-white">Manufacturer</a>
-                        </li>
-                    </ul>
-                </div>
+                    <div class="">
+                        <button class="btn btn-warning mt-4 Generate-Code" data-bs-toggle="modal"data-bs-target="#Code-Modal">Add</button>
+                        <p class="added-or-not"></p>
+                    </div>
             </div>
-        </nav>
-    </div>
-    <!--my purchase-->
-    <div class="modal fade" id="Mycodes">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <p>My Codes</p>
-                </div>
-                <div class="modal-body ">
-                    <div class="CodeList"></div>
-                    <p class="purchased-codes"></p>
-                    
-                </div>
-                <div class="modal-footer d-flex flex-column">
-                    
-                    <button class="btn btn-primary "data-bs-dismiss="modal">Close</button>
-                </div>
+            <div class="modal-footer">
+                <button class="btn btn-warning" >Submit</button>
             </div>
         </div>
     </div>
-    <!--Manufactured-->
-    <div class="modal fade " id="Manufactured">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <P>Manufactured Product details</P>
-                </div>
-                <div class="modal-body">
-                        <p>Please Enter All Fields</p>
-                        <div class="form-floating mt-4">
-                            <input type="text" id="Account-Name" class="Account-verify form-control" placeholder="Sell">
-                            <label for="Account-Name">Account-Name</label>
-                            
-                        </div>
-                        <div class="form-floating mt-4">
-                            <input type="text" id="Account-Password" class="Account-password-verify form-control" placeholder="Sell">
-                            <label for="Account-Password">Account-Password</label>
-                            
-                        </div>
-                        <div class="form-floating mt-4">
-                            <input type="text" id="New-Product-Image" class="New-Product-Image form-control" placeholder="Sell">
-                            <label for="New-Product-Image">Enter Image</label>
-                            
-                        </div>
-                        <div class="form-floating mt-4">
-                            <input type="text" id="New-Product-name" class="New-Product-name form-control" placeholder="Sell">
-                            <label for="New-Product-name">Enter Name</label>
-                            
-                        </div>
-                        <div class="Account-validation"></div>
+</div>
 
-                        <div class="my-4">
-                            <button class="btn btn-primary Account-valid-button">Verify</button>
-                            <button class="btn btn-primary Account-clear-button">clear</button>
-                        </div>
+<!--Code-modal-->
 
-                        <div class="">
-                            <button class="btn btn-primary mt-4 Generate-Code" data-bs-toggle="modal"data-bs-target="#Code-Modal">Add</button>
-                            <p class="added-or-not"></p>
-                        </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" >Submit</button>
-                </div>
+<div class="modal fade" id="Code-Modal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p>Code</p>
             </div>
-
-        </div>
-
-    </div>
-    <!--Code-modal-->
-
-    <div class="modal fade" id="Code-Modal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <p>Code</p>
-                </div>
-                <div class="modal-body ">
-                    <div class="alerting alert-text"></div>
-                    <div class="Code-display fw-bolder  p-5"></div>
-                    
-                    
-
-                </div>
-                <div class="modal-footer d-flex flex-column">
-                    
-                    <button class="btn btn-primary Code-Error-Preventor"data-bs-dismiss="modal">Copied</button>
-                </div>
+            <div class="modal-body ">
+                <div class="alerting alert-text"></div>
+                <div class="Code-display fw-bolder  p-5"></div>
+            </div>
+            <div class="modal-footer d-flex flex-column">
+                <button class="btn btn-warning Code-Error-Preventor"data-bs-dismiss="modal">Copied</button>
             </div>
         </div>
     </div>
+</div>
 
-    <!--add product -->
-    <div class="modal fade " id="add-product">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <P>Product details</P>
-                </div>
-                <div class="modal-body">
-                        <p>Please Enter All Fields</p>
-                        <div class="form-floating mt-4">
-                            <input type="text" id="Prod-Image" class="image-add form-control" placeholder="Sell">
-                            <label for="Prod-Image">Image-Link</label>
-                            
-                        </div>
-                        <div class="form-floating mt-4">
-                            <input type="text" id="Prod-Name" class="name-add form-control" placeholder="Sell">
-                            <label for="Prod-Name">Name</label>
-                            
-                        </div>
-                        <div class="form-floating mt-4">
-                            <input type="number" id="Prod-rate" class="rate-add form-control" placeholder="Sell">
-                            <label for="Prod-rate">Cost</label>
-                            
-                        </div>
+<!--add product -->
 
-                        <div class="input-group form-floating mt-4">
-                            <input type="text" id="Ucode" class="seller-input-code form-control" placeholder="Code">
-                            <label for="Ucode">Code</label>
-                            
-                            <button class="btn btn-primary rounded-end-3 validation-button ">Validate</button>
-                        </div>
-                        <p class="sign-valid d-inline"></p>
-                        <p class="validation d-inline"></p>
-                        <div class="form-floating mt-4">
-                            <input type="text" id="seller" class="add-seller-name form-control" placeholder="Sell">
-                            <label for="seller">Seller name</label>
-                            
-                        </div>
-                        <div class="">
-                            <button class="btn btn-primary mt-4 add-product">Add</button>
-                        </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary form-clear" >Submit</button>
-                </div>
+<div class="modal fade " id="add-product">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <P>Product details</P>
             </div>
-
+            <div class="modal-body">
+                    <p>Please Enter All Fields</p>
+                    <div class="form-floating mt-4">
+                        <input type="text" id="Prod-Image" class="image-add form-control" placeholder="Sell">
+                        <label for="Prod-Image">Image-Link</label>
+                    </div>
+                    <div class="form-floating mt-4">
+                        <input type="text" id="Prod-Name" class="name-add form-control" placeholder="Sell">
+                        <label for="Prod-Name">Name</label>
+                    </div>
+                    <div class="form-floating mt-4">
+                        <input type="number" id="Prod-rate" class="rate-add form-control" placeholder="Sell">
+                        <label for="Prod-rate">Cost</label>
+                    </div>
+                    <div class="input-group form-floating mt-4">
+                        <input type="text" id="Ucode" class="seller-input-code form-control" placeholder="Code">
+                        <label for="Ucode">Code</label>
+                        <button class="btn btn-warning rounded-end-3 validation-button ">Validate</button>
+                    </div>
+                    <p class="sign-valid d-inline"></p>
+                    <p class="validation d-inline"></p>
+                    
+                    <div class="">
+                        <button class="btn btn-warning mt-4 add-product">Add</button>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-warning form-clear" >Submit</button>
+            </div>
         </div>
-
     </div>
+</div>
+
 
     <!--products-->
-    <div class="container  Products-grid mt-4 ">
+    <div class="container bg-black Products-grid mt-4 ">
     </div>
 
 
