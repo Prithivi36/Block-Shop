@@ -4,6 +4,7 @@ const loginButton=document.querySelector('.login-button');
 const nameInput=document.querySelector('.userInfo');
 const PassInput=document.querySelector('.passInfo');
 const loginStatus=document.querySelector('.status');
+const autoEnter=document.querySelector('.auto-enter');
 
 
 export let userLoginName=JSON.parse(localStorage.getItem('userLoginName'))|| "";
@@ -11,6 +12,7 @@ export let userLoginName=JSON.parse(localStorage.getItem('userLoginName'))|| "";
 function saveLogin(){
     localStorage.setItem('userLoginName',JSON.stringify(userLoginName));
 }
+loginButton.innerHTML=`<button class="btn btn-primary d-block w-100" >Sign in</button>`;
 
 loginButton.addEventListener('click',()=>{
     let userValid=false;
@@ -31,7 +33,7 @@ loginButton.addEventListener('click',()=>{
         }
         if(approved){
             loginStatus.innerHTML=`<p class="validation-right">Welcome</p>`
-            window.location.href ='homepage.html'
+            autoEnter.click();
             saveLogin();
         }
         if(!userValid){
